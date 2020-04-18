@@ -3,102 +3,48 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="SerialDataProcessor_tb_behav.wdb" id="1">
+      <db_ref path="CRC_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="SerialDataProcessor_tb" />
+            <top_module name="CRC_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1647283fs"></ZoomStartTime>
-      <ZoomEndTime time="1714245fs"></ZoomEndTime>
-      <Cursor1Time time="1660458fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="3000000fs"></ZoomEndTime>
+      <Cursor1Time time="3000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="191"></NameColumnWidth>
-      <ValueColumnWidth column_width="60"></ValueColumnWidth>
+      <NameColumnWidth column_width="189"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="14" />
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/raw" type="logic">
-      <obj_property name="ElementShortName">raw</obj_property>
-      <obj_property name="ObjectShortName">raw</obj_property>
-      <obj_property name="CustomSignalColor">#A0A0A4</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/clock" type="logic">
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/CRC_tb/clock" type="logic">
       <obj_property name="ElementShortName">clock</obj_property>
       <obj_property name="ObjectShortName">clock</obj_property>
    </wvobject>
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/resetn" type="logic">
+   <wvobject fp_name="/CRC_tb/resetn" type="logic">
       <obj_property name="ElementShortName">resetn</obj_property>
       <obj_property name="ObjectShortName">resetn</obj_property>
-      <obj_property name="CustomSignalColor">#A0A0A4</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/EOF" type="logic">
-      <obj_property name="ElementShortName">EOF</obj_property>
-      <obj_property name="ObjectShortName">EOF</obj_property>
-      <obj_property name="CustomSignalColor">#A0A0A4</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/CRC_tb/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
    </wvobject>
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/bit_clock" type="logic">
-      <obj_property name="ElementShortName">bit_clock</obj_property>
-      <obj_property name="ObjectShortName">bit_clock</obj_property>
-      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/CRC_tb/bitcount" type="array">
+      <obj_property name="ElementShortName">bitcount[6:0]</obj_property>
+      <obj_property name="ObjectShortName">bitcount[6:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/bit_clock_internal" type="logic">
-      <obj_property name="ElementShortName">bit_clock_internal</obj_property>
-      <obj_property name="ObjectShortName">bit_clock_internal</obj_property>
-      <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/CRC_tb/crci" type="array">
+      <obj_property name="ElementShortName">crci[82:0]</obj_property>
+      <obj_property name="ObjectShortName">crci[82:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/frame_in_progress" type="logic">
-      <obj_property name="ElementShortName">frame_in_progress</obj_property>
-      <obj_property name="ObjectShortName">frame_in_progress</obj_property>
-      <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/CRC_tb/crco" type="array">
+      <obj_property name="ElementShortName">crco[14:0]</obj_property>
+      <obj_property name="ObjectShortName">crco[14:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/current_bus_level" type="logic">
-      <obj_property name="ElementShortName">current_bus_level</obj_property>
-      <obj_property name="ObjectShortName">current_bus_level</obj_property>
-      <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/input_edge" type="logic">
-      <obj_property name="ElementShortName">input_edge</obj_property>
-      <obj_property name="ObjectShortName">input_edge</obj_property>
-      <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/sampler_enable" type="logic">
-      <obj_property name="ElementShortName">sampler_enable</obj_property>
-      <obj_property name="ObjectShortName">sampler_enable</obj_property>
-      <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/counter" type="other">
-      <obj_property name="ElementShortName">counter</obj_property>
-      <obj_property name="ObjectShortName">counter</obj_property>
-      <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/CLOCKS_PER_BIT" type="other">
-      <obj_property name="ElementShortName">CLOCKS_PER_BIT</obj_property>
-      <obj_property name="ObjectShortName">CLOCKS_PER_BIT</obj_property>
-      <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/CLOCKS_UNTIL_SAMPLE" type="other">
-      <obj_property name="ElementShortName">CLOCKS_UNTIL_SAMPLE</obj_property>
-      <obj_property name="ObjectShortName">CLOCKS_UNTIL_SAMPLE</obj_property>
-      <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SerialDataProcessor_tb/uut/EOF_internal" type="logic">
-      <obj_property name="ElementShortName">EOF_internal</obj_property>
-      <obj_property name="ObjectShortName">EOF_internal</obj_property>
-      <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/CRC_tb/T" type="other">
+      <obj_property name="ElementShortName">T</obj_property>
+      <obj_property name="ObjectShortName">T</obj_property>
    </wvobject>
 </wave_config>

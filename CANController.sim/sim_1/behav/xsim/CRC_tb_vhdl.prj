@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../CRC/CRC_FSM.vhd" \
+"../../../../CRC/CRC_top.vhd" \
+"../../../../CRC/mux21.vhd" \
+"../../../../CRC/my_rege.vhd" \
+"../../../../CRC/reg.vhd" \
+"../../../../CRC/CRC_tb.vhd" \
+
+# Do not sort compile order
+nosort
