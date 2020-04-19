@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sat Apr 18 17:48:31 2020
+# Process ID: 3176
+# Current directory: C:/Users/John/source/ECE4710-CAN-Controller
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11332 C:\Users\John\source\ECE4710-CAN-Controller\CANController.xpr
+# Log file: C:/Users/John/source/ECE4710-CAN-Controller/vivado.log
+# Journal file: C:/Users/John/source/ECE4710-CAN-Controller\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/John/source/ECE4710-CAN-Controller/CANController.xpr
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/John/source/ECE4710-CAN-Controller/SerialDataProcessor_tb_behav.wcfg
+source CRC_tb.tcl
+restart
+close_sim
+launch_simulation
+open_wave_config C:/Users/John/source/ECE4710-CAN-Controller/SerialDataProcessor_tb_behav.wcfg
+source CRC_tb.tcl
+close_sim

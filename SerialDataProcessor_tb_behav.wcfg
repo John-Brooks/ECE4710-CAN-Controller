@@ -3,48 +3,73 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="CRC_tb_behav.wdb" id="1">
+      <db_ref path="top_level_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="CRC_tb" />
+            <top_module name="top_level_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="3000000fs"></ZoomEndTime>
-      <Cursor1Time time="3000000fs"></Cursor1Time>
+      <ZoomEndTime time="14320001fs"></ZoomEndTime>
+      <Cursor1Time time="6690000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="189"></NameColumnWidth>
+      <NameColumnWidth column_width="181"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
-   <wvobject fp_name="/CRC_tb/clock" type="logic">
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/top_level_tb/uut/clock" type="logic">
       <obj_property name="ElementShortName">clock</obj_property>
       <obj_property name="ObjectShortName">clock</obj_property>
    </wvobject>
-   <wvobject fp_name="/CRC_tb/resetn" type="logic">
+   <wvobject fp_name="/top_level_tb/uut/resetn" type="logic">
       <obj_property name="ElementShortName">resetn</obj_property>
       <obj_property name="ObjectShortName">resetn</obj_property>
    </wvobject>
-   <wvobject fp_name="/CRC_tb/done" type="logic">
-      <obj_property name="ElementShortName">done</obj_property>
-      <obj_property name="ObjectShortName">done</obj_property>
+   <wvobject fp_name="/top_level_tb/uut/CAN_rx" type="logic">
+      <obj_property name="ElementShortName">CAN_rx</obj_property>
+      <obj_property name="ObjectShortName">CAN_rx</obj_property>
    </wvobject>
-   <wvobject fp_name="/CRC_tb/bitcount" type="array">
-      <obj_property name="ElementShortName">bitcount[6:0]</obj_property>
-      <obj_property name="ObjectShortName">bitcount[6:0]</obj_property>
+   <wvobject fp_name="/top_level_tb/uut/CAN_tx" type="logic">
+      <obj_property name="ElementShortName">CAN_tx</obj_property>
+      <obj_property name="ObjectShortName">CAN_tx</obj_property>
    </wvobject>
-   <wvobject fp_name="/CRC_tb/crci" type="array">
-      <obj_property name="ElementShortName">crci[82:0]</obj_property>
-      <obj_property name="ObjectShortName">crci[82:0]</obj_property>
+   <wvobject fp_name="/top_level_tb/uut/EOF" type="logic">
+      <obj_property name="ElementShortName">EOF</obj_property>
+      <obj_property name="ObjectShortName">EOF</obj_property>
    </wvobject>
-   <wvobject fp_name="/CRC_tb/crco" type="array">
-      <obj_property name="ElementShortName">crco[14:0]</obj_property>
-      <obj_property name="ObjectShortName">crco[14:0]</obj_property>
+   <wvobject fp_name="/top_level_tb/uut/bit_clock" type="logic">
+      <obj_property name="ElementShortName">bit_clock</obj_property>
+      <obj_property name="ObjectShortName">bit_clock</obj_property>
    </wvobject>
-   <wvobject fp_name="/CRC_tb/T" type="other">
-      <obj_property name="ElementShortName">T</obj_property>
-      <obj_property name="ObjectShortName">T</obj_property>
+   <wvobject fp_name="/top_level_tb/uut/bit_rx_count" type="other">
+      <obj_property name="ElementShortName">bit_rx_count</obj_property>
+      <obj_property name="ObjectShortName">bit_rx_count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_tb/uut/bit_rx_count_vec" type="array">
+      <obj_property name="ElementShortName">bit_rx_count_vec[6:0]</obj_property>
+      <obj_property name="ObjectShortName">bit_rx_count_vec[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_tb/uut/can_frame" type="array">
+      <obj_property name="ElementShortName">can_frame[107:0]</obj_property>
+      <obj_property name="ObjectShortName">can_frame[107:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_tb/uut/CRC" type="array">
+      <obj_property name="ElementShortName">CRC[14:0]</obj_property>
+      <obj_property name="ObjectShortName">CRC[14:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_tb/uut/CRC_done" type="logic">
+      <obj_property name="ElementShortName">CRC_done</obj_property>
+      <obj_property name="ObjectShortName">CRC_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_tb/current_bit_index" type="other">
+      <obj_property name="ElementShortName">current_bit_index</obj_property>
+      <obj_property name="ObjectShortName">current_bit_index</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_tb/can_frame_bits" type="array">
+      <obj_property name="ElementShortName">can_frame_bits[115:0]</obj_property>
+      <obj_property name="ObjectShortName">can_frame_bits[115:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

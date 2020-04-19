@@ -1,0 +1,18 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../CRC/CRC_FSM.vhd" \
+"../../../../CRC/CRC_top.vhd" \
+"../../../../Destuffer/Destuffer_FSM.vhd" \
+"../../../../CANController.srcs/sources_1/new/SerialDataProcessor.vhd" \
+"../../../../Destuffer/Top_destuffer.vhd" \
+"../../../../CANController.srcs/sources_1/new/bit_sample_clock.vhd" \
+"../../../../Destuffer/counter.vhd" \
+"../../../../CRC/mux21.vhd" \
+"../../../../CRC/my_rege.vhd" \
+"../../../../CRC/reg.vhd" \
+"../../../../Destuffer/shift_reg.vhd" \
+"../../../../CANController.srcs/sources_1/new/top_level.vhd" \
+"../../../../CANController.srcs/sim_1/new/top_level_tb.vhd" \
+
+# Do not sort compile order
+nosort

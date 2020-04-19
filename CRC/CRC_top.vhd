@@ -98,21 +98,21 @@ ireg12 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eq, D
 ireg13 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eq, D => in13, Q => in14);
 ireg14 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eq, D => xin14, Q => in15);
 
-oreg1 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in1, Q => out1);
-oreg2 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in2, Q => out2);
-oreg3 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in3, Q => out3);
-oreg4 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in4, Q => out4);
-oreg5 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in5, Q => out5);
-oreg6 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in6, Q => out6);
-oreg7 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in7, Q => out7);
-oreg8 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in8, Q => out8);
-oreg9 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in9, Q => out9);
-oreg10 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in10, Q => out10);
-oreg11 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in11, Q => out11);
-oreg12 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in12, Q => out12);
-oreg13 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in13, Q => out13);
-oreg14 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in14, Q => out14);
-oreg15 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in15, Q => out15);
+oreg1 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => xin0, Q => out1);
+oreg2 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in1, Q => out2);
+oreg3 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in2, Q => out3);
+oreg4 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => xin3, Q => out4);
+oreg5 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => xin4, Q => out5);
+oreg6 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in5, Q => out6);
+oreg7 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in6, Q => out7);
+oreg8 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => xin7, Q => out8);
+oreg9 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => xin8, Q => out9);
+oreg10 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in9, Q => out10);
+oreg11 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => xin10, Q => out11);
+oreg12 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in11, Q => out12);
+oreg13 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in12, Q => out13);
+oreg14 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in13, Q => out14);
+oreg15 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => xin14, Q => out15);
 
 inmux : mux port map (a97 => muxin(15), a96 => muxin(16), a95 => muxin(17), a94 => muxin(18), a93 => muxin(19), a92 => muxin(20), a91 => muxin(21), a90 => muxin(22),
                       a89 => muxin(23), a88 => muxin(24), a87 => muxin(25), a86 => muxin(26), a85 => muxin(27), a84 => muxin(28), a83 => muxin(29), a82 => muxin(30),
