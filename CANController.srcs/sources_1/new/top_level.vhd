@@ -36,7 +36,9 @@ entity top_level is
     Port ( clock : in STD_LOGIC;
            resetn : in STD_LOGIC;
            CAN_rx : in STD_LOGIC;
-           CAN_tx : out STD_LOGIC);
+           CAN_tx : out STD_LOGIC;
+           byte_out: out STD_LOGIC_VECTOR(7 downto 0)
+           );
 end top_level;
 
 architecture Behavioral of top_level is
@@ -76,10 +78,22 @@ architecture Behavioral of top_level is
     signal can_frame: std_logic_vector (108-1 downto 0);
     signal CRC: std_logic_vector (14 downto 0);
     signal CRC_done: std_logic;
+    signal databytes: std_logic_vector(63 downto 0);
+    signal byte1: std_logic_vector(7 downto 0);
 
 begin
-
+    byte_out <= byte1;
+    byte1 <= databytes(63 downto 56);
     bit_rx_count_vec <= std_logic_vector(to_unsigned(bit_rx_count, 7));
+    
+    process (EOF, resetn)
+	begin
+	    if resetn = '0' then
+	       databytes <= x"0000000000000000";
+        elsif (EOF'event and EOF = '1') then 
+           databytes <= can_frame(88 downto 25);
+        end if;
+    end process;
 
 
     sdp_impl: SerialDataProcessor port map( clock => clock,

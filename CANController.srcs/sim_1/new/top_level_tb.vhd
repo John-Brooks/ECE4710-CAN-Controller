@@ -40,7 +40,8 @@ architecture Behavioral of top_level_tb is
     Port ( clock : in STD_LOGIC;
            resetn : in STD_LOGIC;
            CAN_rx : in STD_LOGIC;
-           CAN_tx : out STD_LOGIC);
+           CAN_tx : out STD_LOGIC;
+           byte_out: out STD_LOGIC_VECTOR(7 downto 0));
     end component;
 
     signal clock, resetn, CAN_rx, CAN_tx: std_logic;
@@ -73,6 +74,18 @@ begin
         wait for 25 ns;
         resetn <= '1';
         
+        --first can frame
+        while current_bit_index >= 0 loop
+            CAN_rx <= can_frame_bits(current_bit_index);
+            current_bit_index <= current_bit_index-1;
+            wait for 2 us;
+        end loop;
+        
+        wait for 10 us;
+        current_bit_index <= 115;
+        wait for 10 us;
+        
+        --second can frame
         while current_bit_index >= 0 loop
             CAN_rx <= can_frame_bits(current_bit_index);
             current_bit_index <= current_bit_index-1;
