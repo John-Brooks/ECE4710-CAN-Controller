@@ -17,7 +17,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity shift_reg is
    generic (N: INTEGER:= 108;
 	         DIR: STRING:= "LEFT"); -- only "LEFT", "RIGHT" are supported
-	port ( clock, resetn: in std_logic;
+	port ( clock, resetn,Re_Count: in std_logic;
 	       shiftin, E: in std_logic;
 	       --shiftout: out std_logic;
 	       --End_of_Frame : out STD_logic;
@@ -45,7 +45,7 @@ a0: assert (DIR = "LEFT" or DIR = "RIGHT")
 	 
 	process (resetn, clock)
 	begin
-		if resetn = '0' then
+		if resetn = '0' or Re_Count= '1' then
 			Qt <= (others => '0');
 		elsif (clock'event and clock = '1') then
 			if E = '1' then

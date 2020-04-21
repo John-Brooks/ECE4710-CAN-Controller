@@ -13,17 +13,17 @@ use ieee.math_real.log2;
 use ieee.math_real.ceil;
 
 entity Destuffer_FSM is
-port (resetn, SDP_CLk: in std_logic; 
+port (resetn, SDP_CLk,Re_Count: in std_logic; 
             data: in std_logic;
 			E_S: out std_logic;
-		    End_of_Frame : out STD_logic;
+		    FSM_EOF : out STD_logic;
 			counter_out: out integer range 0 to 108-1);
 end Destuffer_FSM;
 architecture Behavioral of Destuffer_FSM is
 
 component counter is
 generic (N: INTEGER:= 108);
-        port ( clock, resetn, E, sclr: in std_logic;
+        port ( clock, resetn, E, sclr,Re_Count: in std_logic;
             z: out std_logic;
             C: out integer range 0 to 108-1);
         end component;
@@ -34,8 +34,8 @@ generic (N: INTEGER:= 108);
 	signal con_done, E_con: std_logic;
 begin
 con: counter generic map (n => 108)
-            port map (clock => SDP_CLk, resetn => resetn, E => E_con , sclr => '0',  z => con_done, C => C_signal);
- End_of_Frame <= con_done;
+            port map (clock => SDP_CLk, resetn => resetn, Re_Count => Re_Count, E => E_con , sclr => '0',  z => con_done, C => C_signal);
+ FSM_EOF <= con_done;
             Trans: process (resetn, data, SDP_CLk,C_signal)
 	begin
 		if resetn = '0' then -- asynchronous signal

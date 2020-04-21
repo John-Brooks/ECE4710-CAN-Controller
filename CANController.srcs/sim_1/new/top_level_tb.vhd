@@ -41,13 +41,15 @@ architecture Behavioral of top_level_tb is
            resetn : in STD_LOGIC;
            CAN_rx : in STD_LOGIC;
            CAN_tx : out STD_LOGIC;
-           byte_out: out STD_LOGIC_VECTOR(7 downto 0));
+           byte_out: out STD_LOGIC_VECTOR(7 downto 0);
+           debug_out: out std_logic_vector(7 downto 0));
     end component;
 
     signal clock, resetn, CAN_rx, CAN_tx: std_logic;
     
     signal can_frame_bits: std_logic_vector(115 downto 0);
     signal current_bit_index: integer range 0 to 115;
+    signal byte_out, debug_out: std_logic_vector(7 downto 0);
 
 begin
     can_frame_bits <= "00010010001100010000010000011000001010000010011000001100000100101000001110000010111000010001100100111011111011111111";
@@ -55,7 +57,9 @@ begin
     uut: top_level port map(clock => clock,
                             resetn => resetn,
                             CAN_rx => CAN_rx,
-                            CAN_tx => CAN_tx);
+                            CAN_tx => CAN_tx,
+                            byte_out => byte_out,
+                            debug_out => debug_out);
     
     clock_process : process
     begin
@@ -73,6 +77,7 @@ begin
         
         wait for 25 ns;
         resetn <= '1';
+        wait for 25 ns;
         
         --first can frame
         while current_bit_index >= 0 loop

@@ -114,19 +114,32 @@ oreg13 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout,
 oreg14 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => in13, Q => out14);
 oreg15 : reg port map (clock => clock, resetn => resetn, sclr => '0', E => eout, D => xin14, Q => out15);
 
-inmux : mux port map (a97 => muxin(15), a96 => muxin(16), a95 => muxin(17), a94 => muxin(18), a93 => muxin(19), a92 => muxin(20), a91 => muxin(21), a90 => muxin(22),
-                      a89 => muxin(23), a88 => muxin(24), a87 => muxin(25), a86 => muxin(26), a85 => muxin(27), a84 => muxin(28), a83 => muxin(29), a82 => muxin(30),
-                      a81 => muxin(31), a80 => muxin(32), a79 => muxin(33), a78 => muxin(34), a77 => muxin(35), a76 => muxin(36), a75 => muxin(37), a74 => muxin(38),
-                      a73 => muxin(39), a72 => muxin(40), a71 => muxin(41), a70 => muxin(42), a69 => muxin(43), a68 => muxin(44), a67 => muxin(45), a66 => muxin(46),
-                      a65 => muxin(47), a64 => muxin(48), a63 => muxin(49), a62 => muxin(50), a61 => muxin(51), a60 => muxin(52), a59 => muxin(53), a58 => muxin(54),
-                      a57 => muxin(55), a56 => muxin(56), a55 => muxin(57), a54 => muxin(58), a53 => muxin(59), a52 => muxin(60), a51 => muxin(61), a50 => muxin(62),
-                      a49 => muxin(63), a48 => muxin(64), a47 => muxin(65), a46 => muxin(66), a45 => muxin(67), a44 => muxin(68), a43 => muxin(69), a42 => muxin(70),
-                      a41 => muxin(71), a40 => muxin(72), a39 => muxin(73), a38 => muxin(74), a37 => muxin(75), a36 => muxin(76), a35 => muxin(77), a34 => muxin(78),
-                      a33 => muxin(79), a32 => muxin(80), a31 => muxin(81), a30 => muxin(82), a29 => muxin(83), a28 => muxin(84), a27 => muxin(85), a26 => muxin(86),
-                      a25 => muxin(87), a24 => muxin(88), a23 => muxin(89), a22 => muxin(90), a21 => muxin(91), a20 => muxin(92), a19 => muxin(93), a18 => muxin(94),
-                      a17 => muxin(95), a16 => muxin(96), a15 => muxin(97), a14 => muxin(0), a13 => muxin(1), a12 => muxin(2), a11 => muxin(3), a10 => muxin(4),
-                      a9 => muxin(5), a8 => muxin(6), a7 => muxin(7), a6 => muxin(8), a5 => muxin(9), a4 => muxin(10), a3 => muxin(11), a2 => muxin(12),
-                      a1 => muxin(13), a0 => muxin(14), sel => sel, y => in0);
+--VOID (FOR RECEIVING REVERSED BITS FROM DESTUFFER) inmux : mux port map (a97 => muxin(15), a96 => muxin(16), a95 => muxin(17), a94 => muxin(18), a93 => muxin(19), a92 => muxin(20), a91 => muxin(21), a90 => muxin(22),
+--                      a89 => muxin(23), a88 => muxin(24), a87 => muxin(25), a86 => muxin(26), a85 => muxin(27), a84 => muxin(28), a83 => muxin(29), a82 => muxin(30),
+--                      a81 => muxin(31), a80 => muxin(32), a79 => muxin(33), a78 => muxin(34), a77 => muxin(35), a76 => muxin(36), a75 => muxin(37), a74 => muxin(38),
+--                      a73 => muxin(39), a72 => muxin(40), a71 => muxin(41), a70 => muxin(42), a69 => muxin(43), a68 => muxin(44), a67 => muxin(45), a66 => muxin(46),
+--                      a65 => muxin(47), a64 => muxin(48), a63 => muxin(49), a62 => muxin(50), a61 => muxin(51), a60 => muxin(52), a59 => muxin(53), a58 => muxin(54),
+--                      a57 => muxin(55), a56 => muxin(56), a55 => muxin(57), a54 => muxin(58), a53 => muxin(59), a52 => muxin(60), a51 => muxin(61), a50 => muxin(62),
+--                      a49 => muxin(63), a48 => muxin(64), a47 => muxin(65), a46 => muxin(66), a45 => muxin(67), a44 => muxin(68), a43 => muxin(69), a42 => muxin(70),
+--                      a41 => muxin(71), a40 => muxin(72), a39 => muxin(73), a38 => muxin(74), a37 => muxin(75), a36 => muxin(76), a35 => muxin(77), a34 => muxin(78),
+--                      a33 => muxin(79), a32 => muxin(80), a31 => muxin(81), a30 => muxin(82), a29 => muxin(83), a28 => muxin(84), a27 => muxin(85), a26 => muxin(86),
+--                      a25 => muxin(87), a24 => muxin(88), a23 => muxin(89), a22 => muxin(90), a21 => muxin(91), a20 => muxin(92), a19 => muxin(93), a18 => muxin(94),
+--                      a17 => muxin(95), a16 => muxin(96), a15 => muxin(97), a14 => muxin(0), a13 => muxin(1), a12 => muxin(2), a11 => muxin(3), a10 => muxin(4),
+--                      a9 => muxin(5), a8 => muxin(6), a7 => muxin(7), a6 => muxin(8), a5 => muxin(9), a4 => muxin(10), a3 => muxin(11), a2 => muxin(12),
+--                      a1 => muxin(13), a0 => muxin(14), sel => sel, y => in0);
+inmux : mux port map (a97 => muxin(97), a96 => muxin(96), a95 => muxin(95), a94 => muxin(94), a93 => muxin(93), a92 => muxin(92), a91 => muxin(91), a90 => muxin(90),
+                      a89 => muxin(89), a88 => muxin(88), a87 => muxin(87), a86 => muxin(86), a85 => muxin(85), a84 => muxin(84), a83 => muxin(83), a82 => muxin(82),
+                      a81 => muxin(81), a80 => muxin(80), a79 => muxin(79), a78 => muxin(78), a77 => muxin(77), a76 => muxin(76), a75 => muxin(75), a74 => muxin(74),
+                      a73 => muxin(73), a72 => muxin(72), a71 => muxin(71), a70 => muxin(70), a69 => muxin(69), a68 => muxin(68), a67 => muxin(67), a66 => muxin(66),
+                      a65 => muxin(65), a64 => muxin(64), a63 => muxin(63), a62 => muxin(62), a61 => muxin(61), a60 => muxin(60), a59 => muxin(59), a58 => muxin(58),
+                      a57 => muxin(57), a56 => muxin(56), a55 => muxin(55), a54 => muxin(54), a53 => muxin(53), a52 => muxin(52), a51 => muxin(51), a50 => muxin(50),
+                      a49 => muxin(49), a48 => muxin(48), a47 => muxin(47), a46 => muxin(46), a45 => muxin(45), a44 => muxin(45), a43 => muxin(43), a42 => muxin(42),
+                      a41 => muxin(41), a40 => muxin(40), a39 => muxin(39), a38 => muxin(38), a37 => muxin(37), a36 => muxin(36), a35 => muxin(35), a34 => muxin(34),
+                      a33 => muxin(33), a32 => muxin(32), a31 => muxin(31), a30 => muxin(30), a29 => muxin(29), a28 => muxin(28), a27 => muxin(27), a26 => muxin(26),
+                      a25 => muxin(25), a24 => muxin(24), a23 => muxin(23), a22 => muxin(22), a21 => muxin(21), a20 => muxin(28), a19 => muxin(19), a18 => muxin(18),
+                      a17 => muxin(17), a16 => muxin(16), a15 => muxin(15), a14 => muxin(14), a13 => muxin(13), a12 => muxin(12), a11 => muxin(11), a10 => muxin(10),
+                      a9 => muxin(9), a8 => muxin(8), a7 => muxin(7), a6 => muxin(6), a5 => muxin(5), a4 => muxin(4), a3 => muxin(3), a2 => muxin(2),
+                      a1 => muxin(1), a0 => muxin(0), sel => sel, y => in0);
                       
 fs : CRC_FSM port map (clock => clock, resetn => resetn, bitcount => bitcount, E_in => ein, E_out => eout, Eq => eq, sel => sel, done => done);
                       

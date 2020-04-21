@@ -12,7 +12,7 @@ use ieee.math_real.ceil;
 
 entity counter is
 generic (N: INTEGER:= 108);
-        port ( clock, resetn, E, sclr: in std_logic;
+        port ( clock, resetn, E, sclr,Re_Count: in std_logic;
             z: out std_logic;
             C: out integer range 0 to 108-1);
         end counter;
@@ -21,17 +21,24 @@ generic (N: INTEGER:= 108);
     begin
         process (resetn,clock, E)
             begin 
-        if resetn = '0' then
+        if resetn = '0' or Re_Count= '1' then
             Qt <= 0;
+            z <= '0';
         elsif (clock'event and clock='1') then
             if E = '1' then
-                if sclr = '1' then Qt <= 0;
+                if sclr = '1' then 
+                    Qt <= 0;
+                    z <= '0';
                 else
-                     Qt <= Qt + 1;
+                    Qt <= Qt + 1;
+                    if Qt = (N-1) then
+                        z <= '1';
+                    else
+                        z <= '0';
+                    end if;
                 end if;
             end if;
         end if;
         end process;
-        z <= '1' when Qt = N else '0';
         C <= Qt;
     end bhv;

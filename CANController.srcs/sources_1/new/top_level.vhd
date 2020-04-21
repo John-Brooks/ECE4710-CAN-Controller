@@ -37,7 +37,8 @@ entity top_level is
            resetn : in STD_LOGIC;
            CAN_rx : in STD_LOGIC;
            CAN_tx : out STD_LOGIC;
-           byte_out: out STD_LOGIC_VECTOR(7 downto 0)
+           byte_out: out STD_LOGIC_VECTOR(7 downto 0);
+           debug_out: out std_logic_vector(7 downto 0)
            );
 end top_level;
 
@@ -62,10 +63,10 @@ architecture Behavioral of top_level is
     end component;
     
     component Top_destuffer is
-    port (  resetn: in std_logic;
+    port (  resetn,AC_clock: in std_logic;
             DATA : in STD_LOGIC;
             SPD_CLK : in STD_logic;
-            End_of_Frame : out STD_logic;
+            Des_EOF : out STD_logic;
             C_OUT: out integer range 0 to 108-1;
             --shift_counter: out integer range 0 to 108-1;
             Q_OUT: out std_logic_vector (108-1 downto 0));
@@ -80,18 +81,34 @@ architecture Behavioral of top_level is
     signal CRC_done: std_logic;
     signal databytes: std_logic_vector(63 downto 0);
     signal byte1: std_logic_vector(7 downto 0);
+    
+    signal debug7: std_logic;
 
 begin
     byte_out <= byte1;
     byte1 <= databytes(63 downto 56);
     bit_rx_count_vec <= std_logic_vector(to_unsigned(bit_rx_count, 7));
+    debug_out(3 downto 0) <= bit_rx_count_vec(3 downto 0);
+    debug_out(4) <= EOF;
+    debug_out(5) <= CAN_rx;
+    debug_out(6) <= '0';
+    debug_out(7) <= debug7;
+    debug7 <= '1';
+--    process( resetn, bit_clock )
+--    begin
+--        if resetn = '0' then
+--	       debug7 <= '0';
+--        elsif (bit_clock'event and bit_clock = '1') then 
+--           debug7 <= not debug7;
+--        end if;   
+--    end process;
     
     process (EOF, resetn)
 	begin
 	    if resetn = '0' then
 	       databytes <= x"0000000000000000";
         elsif (EOF'event and EOF = '1') then 
-           databytes <= can_frame(88 downto 25);
+           databytes <= can_frame(89 downto 26);
         end if;
     end process;
 
@@ -102,10 +119,11 @@ begin
                                             EOF => EOF,
                                             bit_clock => bit_clock);
                                             
-    ds_impl: Top_destuffer port map(    resetn => resetn,
+    ds_impl: Top_destuffer port map(    AC_clock => clock,
+                                        resetn => resetn,
                                         DATA => CAN_rx,
                                         SPD_CLK => bit_clock,
-                                        End_of_Frame => EOF,
+                                        Des_EOF => EOF,
                                         C_OUT => bit_rx_count,
                                         Q_OUT => can_frame);
                                         
