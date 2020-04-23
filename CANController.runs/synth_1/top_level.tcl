@@ -38,9 +38,12 @@ read_vhdl -library xil_defaultlib {
   C:/Users/John/source/ECE4710-CAN-Controller/Destuffer/Top_destuffer.vhd
   C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/bit_sample_clock.vhd
   C:/Users/John/source/ECE4710-CAN-Controller/Destuffer/counter.vhd
+  C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/hex2sevenseg.vhd
   C:/Users/John/source/ECE4710-CAN-Controller/CRC/mux21.vhd
+  C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/my_genpulse.vhd
   C:/Users/John/source/ECE4710-CAN-Controller/CRC/my_rege.vhd
   C:/Users/John/source/ECE4710-CAN-Controller/CRC/reg.vhd
+  C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/serializer.vhd
   C:/Users/John/source/ECE4710-CAN-Controller/Destuffer/shift_reg.vhd
   C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/top_level.vhd
 }

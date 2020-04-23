@@ -38,7 +38,9 @@ entity top_level is
            CAN_rx : in STD_LOGIC;
            CAN_tx : out STD_LOGIC;
            byte_out: out STD_LOGIC_VECTOR(7 downto 0);
-           debug_out: out std_logic_vector(7 downto 0)
+           debug_out: out std_logic_vector(7 downto 0);
+           SEGS: out std_logic_vector(7 downto 0);
+           AN_SEL: out std_logic_vector(7 downto 0)
            );
 end top_level;
 
@@ -52,6 +54,13 @@ architecture Behavioral of top_level is
            EOF : in STD_LOGIC;
            bit_clock : out STD_LOGIC -- This signal goes high at the 80% sample point, goes low after one clock cycle.
          );
+    end component;
+
+    component serializer is
+	port (resetn, clock: in std_logic; -- resetn: active-low input, pause: active-high input
+	      A, B, C, D, E, F, G, H: in std_logic_vector (3 downto 0);
+			segs: out std_logic_vector (6 downto 0); -- active-low input for all 7-segment displays
+			AN: out std_logic_vector (7 downto 0)); -- eight active-low enable for each 7-segment display
     end component;
     
     component CRC_top is
@@ -71,6 +80,7 @@ architecture Behavioral of top_level is
             --shift_counter: out integer range 0 to 108-1;
             Q_OUT: out std_logic_vector (108-1 downto 0));
     end component;
+   
     
     signal EOF: std_logic;
     signal bit_clock: std_logic;
@@ -79,14 +89,19 @@ architecture Behavioral of top_level is
     signal can_frame: std_logic_vector (108-1 downto 0);
     signal CRC: std_logic_vector (14 downto 0);
     signal CRC_done: std_logic;
+    signal CRC_extended: std_logic_vector(15 downto 0);
     signal databytes: std_logic_vector(63 downto 0);
     signal byte1: std_logic_vector(7 downto 0);
     
     signal debug7: std_logic;
+    
+    signal segs_internal: std_logic_vector(6 downto 0);
 
 begin
+    SEGS <= '1'&segs_internal;
     byte_out <= byte1;
     byte1 <= databytes(63 downto 56);
+    CRC_extended <= '0'&CRC;
     bit_rx_count_vec <= std_logic_vector(to_unsigned(bit_rx_count, 7));
     debug_out(3 downto 0) <= bit_rx_count_vec(3 downto 0);
     debug_out(4) <= EOF;
@@ -108,7 +123,7 @@ begin
 	    if resetn = '0' then
 	       databytes <= x"0000000000000000";
         elsif (EOF'event and EOF = '1') then 
-           databytes <= can_frame(89 downto 26);
+           databytes <= can_frame(88 downto 25);
         end if;
     end process;
 
@@ -127,12 +142,28 @@ begin
                                         C_OUT => bit_rx_count,
                                         Q_OUT => can_frame);
                                         
-   crc_impl: CRC_top port map(  resetn => resetn,
+    crc_impl: CRC_top port map(  resetn => resetn,
                                 clock => clock,
                                 bitcount => bit_rx_count_vec,
                                 CRC_IN => can_frame(82 downto 0),
                                 CRC_OUT => CRC,
                                 done => CRC_done);
                                 
+    sevenseg_impl: serializer port map( resetn => resetn,
+                                        clock => clock,
+                                        H => databytes(63 downto 60),
+                                        G => databytes(59 downto 56),
+                                        F => databytes(55 downto 52),
+                                        E => databytes(51 downto 48),
+                                        --D => databytes(47 downto 44),
+                                        --C => databytes(43 downto 40),
+                                        --B => databytes(39 downto 36),
+                                        --A => databytes(35 downto 32),
+                                        D => CRC_extended(15 downto 12),
+                                        C => CRC_extended(11 downto 8),
+                                        B => CRC_extended(7 downto 4),
+                                        A => CRC_extended(3 downto 0),
+                                        AN => AN_SEL,
+                                        segs => segs_internal);
                                                                                                                        
 end Behavioral;

@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Mon Apr 20 21:50:07 2020
-# Process ID: 14040
+# Start of session at: Wed Apr 22 20:16:26 2020
+# Process ID: 6432
 # Current directory: C:/Users/John/source/ECE4710-CAN-Controller/CANController.runs/synth_1
 # Command line: vivado.exe -log top_level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl
 # Log file: C:/Users/John/source/ECE4710-CAN-Controller/CANController.runs/synth_1/top_level.vds
@@ -16,14 +16,14 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 3488 
+INFO: Helper process launched with PID 1260 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 785.746 ; gain = 235.086
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 786.152 ; gain = 234.918
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'top_level' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/top_level.vhd:45]
+INFO: [Synth 8-638] synthesizing module 'top_level' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/top_level.vhd:47]
 	Parameter CLOCKS_PER_BIT bound to: 200 - type: integer 
 	Parameter CLOCKS_UNTIL_SAMPLE bound to: 160 - type: integer 
-INFO: [Synth 8-3491] module 'SerialDataProcessor' declared at 'C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/SerialDataProcessor.vhd:34' bound to instance 'sdp_impl' of component 'SerialDataProcessor' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/top_level.vhd:116]
+INFO: [Synth 8-3491] module 'SerialDataProcessor' declared at 'C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/SerialDataProcessor.vhd:34' bound to instance 'sdp_impl' of component 'SerialDataProcessor' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/top_level.vhd:131]
 INFO: [Synth 8-638] synthesizing module 'SerialDataProcessor' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/SerialDataProcessor.vhd:45]
 	Parameter CLOCKS_PER_BIT bound to: 200 - type: integer 
 	Parameter CLOCKS_UNTIL_SAMPLE bound to: 160 - type: integer 
@@ -38,7 +38,7 @@ WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/
 WARNING: [Synth 8-5787] Register z_reg in module bit_sample_clock is clocked by two different clocks in the same process. This may cause simulation mismatches and synthesis errors. Consider using different process statements  [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/bit_sample_clock.vhd:54]
 INFO: [Synth 8-256] done synthesizing module 'bit_sample_clock' (1#1) [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/bit_sample_clock.vhd:47]
 INFO: [Synth 8-256] done synthesizing module 'SerialDataProcessor' (2#1) [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/SerialDataProcessor.vhd:45]
-INFO: [Synth 8-3491] module 'Top_destuffer' declared at 'C:/Users/John/source/ECE4710-CAN-Controller/Destuffer/Top_destuffer.vhd:13' bound to instance 'ds_impl' of component 'Top_destuffer' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/top_level.vhd:122]
+INFO: [Synth 8-3491] module 'Top_destuffer' declared at 'C:/Users/John/source/ECE4710-CAN-Controller/Destuffer/Top_destuffer.vhd:13' bound to instance 'ds_impl' of component 'Top_destuffer' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/top_level.vhd:137]
 INFO: [Synth 8-638] synthesizing module 'Top_destuffer' [C:/Users/John/source/ECE4710-CAN-Controller/Destuffer/Top_destuffer.vhd:23]
 	Parameter N bound to: 108 - type: integer 
 	Parameter DIR bound to: LEFT - type: string 
@@ -58,7 +58,7 @@ WARNING: [Synth 8-614] signal 'Re_Count' is read in the process but is not in th
 INFO: [Synth 8-256] done synthesizing module 'counter' (4#1) [C:/Users/John/source/ECE4710-CAN-Controller/Destuffer/counter.vhd:19]
 INFO: [Synth 8-256] done synthesizing module 'Destuffer_FSM' (5#1) [C:/Users/John/source/ECE4710-CAN-Controller/Destuffer/Destuffer_FSM.vhd:22]
 INFO: [Synth 8-256] done synthesizing module 'Top_destuffer' (6#1) [C:/Users/John/source/ECE4710-CAN-Controller/Destuffer/Top_destuffer.vhd:23]
-INFO: [Synth 8-3491] module 'CRC_top' declared at 'C:/Users/John/source/ECE4710-CAN-Controller/CRC/CRC_top.vhd:11' bound to instance 'crc_impl' of component 'CRC_top' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/top_level.vhd:130]
+INFO: [Synth 8-3491] module 'CRC_top' declared at 'C:/Users/John/source/ECE4710-CAN-Controller/CRC/CRC_top.vhd:11' bound to instance 'crc_impl' of component 'CRC_top' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/top_level.vhd:145]
 INFO: [Synth 8-638] synthesizing module 'CRC_top' [C:/Users/John/source/ECE4710-CAN-Controller/CRC/CRC_top.vhd:19]
 	Parameter N bound to: 98 - type: integer 
 INFO: [Synth 8-3491] module 'my_rege' declared at 'C:/Users/John/source/ECE4710-CAN-Controller/CRC/my_rege.vhd:14' bound to instance 'preg' of component 'my_rege' [C:/Users/John/source/ECE4710-CAN-Controller/CRC/CRC_top.vhd:83]
@@ -104,13 +104,27 @@ INFO: [Synth 8-3491] module 'CRC_FSM' declared at 'C:/Users/John/source/ECE4710-
 INFO: [Synth 8-638] synthesizing module 'CRC_FSM' [C:/Users/John/source/ECE4710-CAN-Controller/CRC/CRC_FSM.vhd:25]
 INFO: [Synth 8-256] done synthesizing module 'CRC_FSM' (10#1) [C:/Users/John/source/ECE4710-CAN-Controller/CRC/CRC_FSM.vhd:25]
 INFO: [Synth 8-256] done synthesizing module 'CRC_top' (11#1) [C:/Users/John/source/ECE4710-CAN-Controller/CRC/CRC_top.vhd:19]
+INFO: [Synth 8-3491] module 'serializer' declared at 'C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/serializer.vhd:17' bound to instance 'sevenseg_impl' of component 'serializer' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/top_level.vhd:152]
+INFO: [Synth 8-638] synthesizing module 'serializer' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/serializer.vhd:24]
+	Parameter COUNT bound to: 100000 - type: integer 
+INFO: [Synth 8-3491] module 'my_genpulse' declared at 'C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/my_genpulse.vhd:18' bound to instance 'gz' of component 'my_genpulse' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/serializer.vhd:28]
+INFO: [Synth 8-638] synthesizing module 'my_genpulse' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/my_genpulse.vhd:25]
+	Parameter COUNT bound to: 100000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'my_genpulse' (12#1) [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/my_genpulse.vhd:25]
+INFO: [Synth 8-3491] module 'hex2sevenseg' declared at 'C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/hex2sevenseg.vhd:15' bound to instance 'seg7' of component 'hex2sevenseg' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/serializer.vhd:64]
+INFO: [Synth 8-638] synthesizing module 'hex2sevenseg' [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/hex2sevenseg.vhd:20]
+INFO: [Synth 8-226] default block is never used [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/hex2sevenseg.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'hex2sevenseg' (13#1) [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/hex2sevenseg.vhd:20]
+INFO: [Synth 8-226] default block is never used [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/serializer.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'serializer' (14#1) [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/serializer.vhd:24]
 WARNING: [Synth 8-3848] Net CAN_tx in module/entity top_level does not have driver. [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/top_level.vhd:39]
-INFO: [Synth 8-256] done synthesizing module 'top_level' (12#1) [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/top_level.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'top_level' (15#1) [C:/Users/John/source/ECE4710-CAN-Controller/CANController.srcs/sources_1/new/top_level.vhd:47]
 WARNING: [Synth 8-3917] design top_level has port debug_out[7] driven by constant 1
 WARNING: [Synth 8-3917] design top_level has port debug_out[6] driven by constant 0
+WARNING: [Synth 8-3917] design top_level has port SEGS[7] driven by constant 1
 WARNING: [Synth 8-3331] design top_level has unconnected port CAN_tx
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 859.770 ; gain = 309.109
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 859.738 ; gain = 308.504
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -123,12 +137,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 859.770 ; gain = 309.109
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 859.738 ; gain = 308.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 859.770 ; gain = 309.109
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 859.738 ; gain = 308.504
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 859.770 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 859.738 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -139,26 +153,26 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 956.582 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 957.430 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 956.582 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 957.430 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 956.582 ; gain = 405.922
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 957.430 ; gain = 406.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 956.582 ; gain = 405.922
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 957.430 ; gain = 406.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 956.582 ; gain = 405.922
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 957.430 ; gain = 406.195
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'y_reg' in module 'Destuffer_FSM'
 INFO: [Synth 8-802] inferred FSM for state register 'y_reg' in module 'CRC_FSM'
@@ -186,7 +200,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'y_reg' using encoding 'one
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'y_reg' using encoding 'sequential' in module 'CRC_FSM'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 956.582 ; gain = 405.922
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 957.430 ; gain = 406.195
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -208,16 +222,19 @@ Detailed RTL Component Info :
 	               64 Bit    Registers := 1     
 	                8 Bit    Registers := 1     
 	                7 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 36    
 +---Muxes : 
 	   2 Input     98 Bit        Muxes := 1     
 	  10 Input     10 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 11    
 	   2 Input      8 Bit        Muxes := 2     
+	   8 Input      8 Bit        Muxes := 1     
 	   2 Input      7 Bit        Muxes := 1     
 	   3 Input      7 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
 	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 3     
 	   3 Input      1 Bit        Muxes := 6     
 	   2 Input      1 Bit        Muxes := 6     
 	  10 Input      1 Bit        Muxes := 1     
@@ -296,6 +313,14 @@ Module CRC_top
 Detailed RTL Component Info : 
 +---XORs : 
 	   2 Input      1 Bit         XORs := 7     
+Module serializer 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -314,12 +339,26 @@ Start Cross Boundary and Area Optimization
 Warning: Parallel synthesis criteria is not met 
 WARNING: [Synth 8-3917] design top_level has port debug_out[7] driven by constant 1
 WARNING: [Synth 8-3917] design top_level has port debug_out[6] driven by constant 0
+WARNING: [Synth 8-3917] design top_level has port SEGS[7] driven by constant 1
 WARNING: [Synth 8-3331] design top_level has unconnected port CAN_tx
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sdp_impl/bsc/z_reg )
-WARNING: [Synth 8-3332] Sequential element (crc_impl/fs/FSM_sequential_y_reg[1]) is unused and will be removed from module top_level.
-WARNING: [Synth 8-3332] Sequential element (crc_impl/fs/FSM_sequential_y_reg[0]) is unused and will be removed from module top_level.
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[0]' (FDCE) to 'crc_impl/preg/Qt_reg[1]'
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[1]' (FDCE) to 'crc_impl/preg/Qt_reg[2]'
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[2]' (FDCE) to 'crc_impl/preg/Qt_reg[3]'
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[3]' (FDCE) to 'crc_impl/preg/Qt_reg[4]'
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[4]' (FDCE) to 'crc_impl/preg/Qt_reg[5]'
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[5]' (FDCE) to 'crc_impl/preg/Qt_reg[6]'
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[6]' (FDCE) to 'crc_impl/preg/Qt_reg[7]'
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[7]' (FDCE) to 'crc_impl/preg/Qt_reg[8]'
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[8]' (FDCE) to 'crc_impl/preg/Qt_reg[9]'
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[9]' (FDCE) to 'crc_impl/preg/Qt_reg[10]'
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[10]' (FDCE) to 'crc_impl/preg/Qt_reg[11]'
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[11]' (FDCE) to 'crc_impl/preg/Qt_reg[12]'
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[12]' (FDCE) to 'crc_impl/preg/Qt_reg[13]'
+INFO: [Synth 8-3886] merging instance 'crc_impl/preg/Qt_reg[13]' (FDCE) to 'crc_impl/preg/Qt_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\crc_impl/preg/Qt_reg[14] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 956.582 ; gain = 405.922
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 957.430 ; gain = 406.195
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -331,13 +370,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 956.582 ; gain = 405.922
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 957.430 ; gain = 406.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 956.582 ; gain = 405.922
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 978.441 ; gain = 427.207
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -349,7 +388,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 956.582 ; gain = 405.922
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 978.441 ; gain = 427.207
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -373,13 +412,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 959.805 ; gain = 409.145
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 978.441 ; gain = 427.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 959.805 ; gain = 409.145
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 978.441 ; gain = 427.207
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -398,25 +437,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 959.805 ; gain = 409.145
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 978.441 ; gain = 427.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 959.805 ; gain = 409.145
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 978.441 ; gain = 427.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 959.805 ; gain = 409.145
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 978.441 ; gain = 427.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 959.805 ; gain = 409.145
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 978.441 ; gain = 427.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -429,61 +468,98 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+------+------+
-|      |Cell  |Count |
-+------+------+------+
-|1     |BUFG  |     2|
-|2     |LUT1  |     1|
-|3     |LUT2  |    11|
-|4     |LUT3  |     4|
-|5     |LUT4  |     8|
-|6     |LUT5  |    13|
-|7     |LUT6  |    10|
-|8     |FDCE  |   123|
-|9     |FDPE  |     5|
-|10    |FDRE  |     1|
-|11    |LDC   |     1|
-|12    |IBUF  |     3|
-|13    |OBUF  |    16|
-|14    |OBUFT |     1|
-+------+------+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |     5|
+|3     |LUT1   |     2|
+|4     |LUT2   |    43|
+|5     |LUT3   |    25|
+|6     |LUT4   |    25|
+|7     |LUT5   |    16|
+|8     |LUT6   |    57|
+|9     |MUXF7  |     4|
+|10    |FDCE   |   263|
+|11    |FDPE   |     5|
+|12    |FDRE   |     8|
+|13    |LDC    |     1|
+|14    |IBUF   |     3|
+|15    |OBUF   |    32|
+|16    |OBUFT  |     1|
++------+-------+------+
 
 Report Instance Areas: 
-+------+-------------+--------------------+------+
-|      |Instance     |Module              |Cells |
-+------+-------------+--------------------+------+
-|1     |top          |                    |   199|
-|2     |  ds_impl    |Top_destuffer       |   137|
-|3     |    FSM_C    |Destuffer_FSM       |    45|
-|4     |      con    |counter             |    27|
-|5     |    shiftreg |shift_reg           |    91|
-|6     |  sdp_impl   |SerialDataProcessor |    32|
-|7     |    bsc      |bit_sample_clock    |    24|
-+------+-------------+--------------------+------+
++------+----------------+--------------------+------+
+|      |Instance        |Module              |Cells |
++------+----------------+--------------------+------+
+|1     |top             |                    |   492|
+|2     |  crc_impl      |CRC_top             |   197|
+|3     |    fs          |CRC_FSM             |    49|
+|4     |    ireg0       |\reg                |     1|
+|5     |    ireg1       |reg_0               |     1|
+|6     |    ireg10      |reg_1               |     1|
+|7     |    ireg11      |reg_2               |     1|
+|8     |    ireg12      |reg_3               |     1|
+|9     |    ireg13      |reg_4               |     1|
+|10    |    ireg14      |reg_5               |     7|
+|11    |    ireg2       |reg_6               |     1|
+|12    |    ireg3       |reg_7               |     1|
+|13    |    ireg4       |reg_8               |     1|
+|14    |    ireg5       |reg_9               |     1|
+|15    |    ireg6       |reg_10              |     1|
+|16    |    ireg7       |reg_11              |     1|
+|17    |    ireg8       |reg_12              |     1|
+|18    |    ireg9       |reg_13              |     1|
+|19    |    oreg1       |reg_14              |     1|
+|20    |    oreg10      |reg_15              |     2|
+|21    |    oreg11      |reg_16              |     2|
+|22    |    oreg12      |reg_17              |     2|
+|23    |    oreg13      |reg_18              |     1|
+|24    |    oreg14      |reg_19              |     1|
+|25    |    oreg15      |reg_20              |     1|
+|26    |    oreg2       |reg_21              |     1|
+|27    |    oreg3       |reg_22              |     1|
+|28    |    oreg4       |reg_23              |     1|
+|29    |    oreg5       |reg_24              |     1|
+|30    |    oreg6       |reg_25              |     1|
+|31    |    oreg7       |reg_26              |     1|
+|32    |    oreg8       |reg_27              |     1|
+|33    |    oreg9       |reg_28              |     2|
+|34    |    preg        |my_rege             |   108|
+|35    |  ds_impl       |Top_destuffer       |   135|
+|36    |    FSM_C       |Destuffer_FSM       |    44|
+|37    |      con       |counter             |    25|
+|38    |    shiftreg    |shift_reg           |    90|
+|39    |  sdp_impl      |SerialDataProcessor |    33|
+|40    |    bsc         |bit_sample_clock    |    25|
+|41    |  sevenseg_impl |serializer          |    73|
+|42    |    gz          |my_genpulse         |    47|
++------+----------------+--------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 959.805 ; gain = 409.145
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 978.441 ; gain = 427.207
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 959.805 ; gain = 312.332
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 959.805 ; gain = 409.145
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 978.441 ; gain = 329.516
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 978.441 ; gain = 427.207
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 959.805 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 978.441 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 973.238 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 978.441 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   LDC => LDCE: 1 instance 
 
 INFO: [Common 17-83] Releasing license: Synthesis
-81 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
+107 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 973.238 ; gain = 675.020
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 973.238 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 978.441 ; gain = 680.402
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 978.441 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/John/source/ECE4710-CAN-Controller/CANController.runs/synth_1/top_level.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 20 21:50:35 2020...
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 22 20:16:57 2020...
